@@ -7,7 +7,7 @@ body {
 }
 
 .container {
-    max-width: 1000px;
+    max-width: 1200px;
     margin-inline: auto;
     margin-bottom: 200px;
 }
@@ -27,26 +27,79 @@ body {
 
 .searchbar {
     border: 2px solid #c7c9c7;
-    padding: 5px;
-    width: 18rem;
+    padding-right: 8px;
+    width: 235px;
+    height: 2.25rem;
     border-radius: 8px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 5px;
 }
 
 .searchbar input {
     background-color: transparent;
     border: 0;
     color: #c7c9c7;
+    margin-right: auto;
+    width: 100%;
+    height: 100%;
+    font-size: 1.25rem
+  
 }
 
 .searchbar i {
-    margin-left: 100px;
+    /* margin-left: auto; */
+    margin: 5px 2px 5px 2px;
+   
 }
 
 .cart, .signin {
     display: flex;
     align-items: center;
     gap: 20px;
-    width: 100px;
+   
+}
+
+.menu-btn {
+    visibility: hidden;
+    background-color: transparent;
+    border: none;
+}
+
+.menu-btn .line {
+    transition: 
+        y 200ms ease-in 200ms,
+        rotate  200ms ease-in,
+        opacity 0ms 200ms;
+    ;
+    transform-origin: center;
+    color: #fff;
+    fill: #fff;
+}
+
+.menu-btn[aria-expanded='true'] .line {
+    transition: 
+        y 200ms ease-in,
+        rotate  200ms ease-in 200ms,
+        opacity 0ms 200ms;
+    ;
+}
+
+.menu-btn[aria-expanded='true'] :is(.top, .bottom){
+    y:45;
+}
+
+.menu-btn[aria-expanded='true'] .top {
+    rotate: 45deg;
+}
+
+.menu-btn[aria-expanded='true'] .middle {
+    opacity: 0;
+}
+
+.menu-btn[aria-expanded='true'] .bottom {
+    rotate: -45deg;
 }
 /* Email Subscibe */
 .email {
@@ -80,7 +133,6 @@ body {
     background-position:center;
     background-size: cover;
     height: 500px;
-    width: 1000px;
     margin-inline: auto;
     display: grid;
     place-content: center;
@@ -123,11 +175,13 @@ body {
 .first-ad {
     display: flex;
     grid-area: first;
-    width: fit-content;
     background-color: #11111f;
+    background-image: url('./assets/Screen\ Shot\ 2023-11-09\ at\ 9.23.57\ PM.png');
+    background-position:center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 770px;
 }
-
-.first-ad img {width: 300px;}
 
 .ad-text {
     display: flex;
@@ -138,6 +192,7 @@ body {
     text-align: center;
     justify-content: center;
     padding: 20px;
+    margin-left: auto;
 }
 
 .ad-sub-text {
@@ -211,6 +266,37 @@ body {
     font-size: 2.75rem;
 }
 
+/* Popular Products */
+.popular {
+    max-width: 1200px;
+    padding: 20px;
+}
+.popular-wrapper {
+    display: flex;
+    gap: 120px;
+    overflow: scroll;
+}
+.popular h2 {
+    margin-bottom: 50px;
+    font-size: 3rem;
+}
+.pop-card {
+    width: max-content;
+    transition: all 200ms ease-in-out;
+    padding-bottom: 10px;
+}
+
+.product-title, .brand-name, .product-price {margin: 8px;}
+.product-title:hover {
+    text-decoration: underline ;
+    transition: all 200ms ease-in-out;
+    cursor: pointer;
+}
+.popular img {
+    width: 200px;
+    cursor: pointer;
+}
+
 /* Shop By */
 .shop {
     margin-top: 100px;
@@ -221,9 +307,7 @@ body {
     color: #11111f;
     margin-bottom: 200px;
 }
-.shop-header {
-    font-size: 3rem;
-}
+.shop-header {font-size: 3rem;}
 
 .shop-slide-container {
     display: grid;
@@ -232,6 +316,8 @@ body {
 }
 
 .slide img {width: 200px;}
+
+.slide {transition: all 200ms ease-in-out;}
 
 .slide:hover {
     transform: scale(1.1);
@@ -265,17 +351,14 @@ body {
     background-size:auto;
     height: 800px;
     display: grid;
-    justify-content: center;
     padding: 20px;
-    margin-inline: auto;
-    max-width: 1000px;
 }
 
 .social-icons {
     display: flex;
     flex-direction: column;
+    width: auto;
     gap: 40px;
-    width: 1000px;
     margin-right: auto;
 
 }
@@ -322,7 +405,6 @@ footer {
     display:grid;
     flex-direction: column;
     justify-content: center;
-   
     padding-top: 50px;
 }
 
@@ -331,14 +413,8 @@ footer {
     gap: 200px;
 }
 
-footer a {
-    color: #c7c9c7;
-}
+footer a {color: #c7c9c7;}
 
-.address h5 {
-    margin: 5px;
-}
+.address h5 {margin: 5px;}
 
-footer img {
-    margin-inline: auto;
-}
+footer img {margin-inline: auto;}

@@ -1,0 +1,61 @@
+@media screen and (max-width: 768px) {
+    .container {
+        max-width: auto;
+    }
+
+    .navbar {
+        display: none;
+        visibility: hidden;
+        opacity: 0;
+        transition: all 800ms ease-out;
+        margin-top:-30px;
+        z-index: -1000;
+        position: relative;
+    }
+
+    .btn-wrapper{
+        display: flex;
+        justify-content: end;
+    }
+    
+    .menu-btn {
+        visibility: visible;
+        margin-top: 10px;
+        margin-right: 10px;
+    }
+    
+    .navbar.active {
+        margin-top: 30px;
+        width: 500px;
+        height:100px;
+        background: #fff;
+        position:fixed;
+        visibility: visible;
+        display: flex;
+        align-items: center;
+        z-index: 1000;
+        transition: all 300ms ease-in-out;
+        opacity: 100%;
+    }
+
+    .header {
+        gap: 200px;
+    }
+
+    .cart, .signin, .searchbar {
+        display: none;
+    }
+
+    .shop {
+        flex-direction: column;
+        text-align: center;
+    }
+    .shop-header {
+        margin-bottom: 50px;
+    }
+
+    /* social icons */
+    .social-media {
+        width: 768px;
+    }
+}
